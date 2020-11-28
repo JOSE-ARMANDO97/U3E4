@@ -1,0 +1,49 @@
+package Main;
+
+import Logica.PilaDinamica;
+import java.util.Scanner;
+
+
+public class Principal {
+     public static void main(String args[]){
+        Scanner leer = new Scanner(System.in);
+        PilaDinamica Pila= new PilaDinamica();
+        
+       boolean continuar = true;
+               String respuesta;
+       int  menu=0;
+    
+        while(continuar){
+    
+        System.out.println("BIENVENIDOS A  LA PILA DINAMICA \n"
+                   + "1: INSERTAR PALABRA A LA PILA\n"
+                   + "2: MOSTRAR PILA DINAMICA \n"
+                   + "3: ELIMINAR UN ELEMENTO \n"
+                   + "4: SALIR");
+        menu=leer.nextInt();
+        
+          switch(menu){
+              case 1:
+                System.out.println("CONFIRME SI REALMENTE QUIERES INGRSAR DATOS SI/NO");
+                respuesta=leer.next();
+                Pila.Empujar(respuesta);
+                break;
+            case 2:
+                 
+               Pila.mostrarPila();
+               break;
+            case 3:
+                Pila.SacrPila();
+                break;
+            case 4:
+                System.out.println(" ELEGISTE SALIR...");
+                continuar=false;
+                break;
+                 default:
+                 System.out.println("opcion incorrecta");
+                 break;
+           
+          }
+     }
+  }
+}
