@@ -1,0 +1,50 @@
+package Logica;
+
+import Creador.NodoPila;
+import java.util.ArrayList;
+import java.util.List;
+
+public class PilaDinamica {
+     NodoPila cima;
+ int tamaño,li=50,ls=500,num;
+ boolean palabra=false;
+List lista=new ArrayList();
+ 
+    public boolean estaVacia(){
+      return  cima==null;
+    }
+   
+    
+    public void Empujar(String resp){ 
+        if (resp.equals("si")){
+            for(int i=0;i<10;i++){
+        num=(int)(Math.random()*(ls-li)+1);
+           
+    NodoPila nodo =new NodoPila(num);
+    nodo.siguiente=cima;
+    cima=nodo;
+    tamaño++;
+        }
+     }
+    }
+    public void SacrPila(){
+        if(estaVacia()){
+            System.out.println("LLA NO PUEDES ELIMINAR POR QUE LA PILA ESTA VACIA");
+        }else{
+    cima=cima.siguiente;
+    tamaño--;
+        }
+    }
+    public void mostrarPila(){
+        if(estaVacia()){
+            System.out.println("LA PILA ESTA VACIA INGRESE DATOS");
+              }else{
+    NodoPila recorre=cima;
+    while(recorre!=null){
+        
+        System.out.println(recorre.elemento);
+        recorre=recorre.siguiente;
+        }
+       }
+    }
+}
